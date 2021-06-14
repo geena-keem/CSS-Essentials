@@ -7,6 +7,58 @@
     <title>Document</title>
     <!-- https://developer.mozilla.org/ko/docs/Web/CSS/position 참고 -->
     <!-- https://developer.mozilla.org/ko/docs/Web/CSS/Containing_Block 참고 -->
+    <style>
+        .outer {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            background-color: yellow;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            
+            position: relative; 
+            /* .box .inner1 부분 position과 관련 */
+        }
+
+        .inner {
+            width: 100%;
+            height: 50%;
+        }
+
+        .inner1 {
+            background-color: cyan;
+        }
+
+        .inner2 {
+            background-color: magenta;
+        }
+
+        .box1 .inner1 {
+            position: relative;
+            /* relative: 흐름에 따라 배치하며 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용한다. */
+            /* 원래 있던 공간은 유지하면서 상대적으로 명시한 속성값 만큼 옮겨가는 것. */
+
+            /* position: static;  */
+            /* static(기본값): 흐름에 따라 배치하며 top, right, bottom, left, z-index 속성에 영향을 주지 않는다. */
+
+            top: 30px;
+            left: 100px;
+        }
+
+        .box2 .inner1 {
+            position: absolute;
+            /* absolute: 흐름을 제거하고 페이지 레이아웃에 공간도 배정하지 않는다. 최종 위치는 속성값에 따른다. */
+            /* 근접한 부모 중에 기본값이 static이 아닌 부모의 기준에서 움직인다. */
+            /* 현재 부모는 body로 box 안에서 position을 옮겨가고 싶으면 box position을 relative로 변경해주면 된다. */
+
+            top: 30px;
+            left: 100px;
+        }
+    </style>
 </head>
 <body>
     <div class="outer">
