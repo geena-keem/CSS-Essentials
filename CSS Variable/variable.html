@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom properties</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/--* 참고 -->
+    <style>
+      /* --custom; */
+      :root {
+        /* --font-size: 32px; */
+        --background-color: cadetblue;
+        --text-color: whitesmoke;
+        --base-space: 8px;
+      }
+
+      .first-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        
+        /* margin-left: 8px; */
+        margin-left: var(--base-space, 8); /* 만약 var에서 정의된 값이 없다면 기본값을 전달할 수도 있다. */
+
+        /* 변수 선언 */
+        /* --font-size: 32px; */
+        /* font-size: var(--font-size); */
+        /* 변수는 항상 var()를 이용해 값을 읽어 올 수 있다. */
+        /* 선언된 변수는 모든 자식요소에서 접근이 가능하다. (.first-list li 접근이 가능함) */
+        /* 보통은 지역으로 선언하지 않고 root에서 선언하여 사용한다. */
+      }
+
+      .second-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        
+        /* margin-left: 16px; */
+        margin-left: calc(var(--base-space) * 2);
+        
+        /* font-size: var(--font-size); */
+      }
+
+      @media screen and (max-width: 768px) {
+        :root {
+        /* --font-size: 32px; */
+        --background-color: salmon;
+        --text-color: blue;
+        --base-space: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="first-list">
+      <li>ORANGE</li>
+      <li>APPLE</li>
+    </ul>
+    <ul class="second-list">
+      <li>KOREA</li>
+      <li>JAPAN</li>
+      <li>CHINA</li>
+    </ul>
+  </body>
+</html>
