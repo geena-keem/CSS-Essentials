@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/position 참고 -->
-    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/Containing_Block 참고 -->
-    <style>
-        .container {
-            position: relative;
-            top: 100px;
-            left: 100px;
-            background-color: beige;
-        }
-        
-        .box {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            background-color: cadetblue;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- https://developer.mozilla.org/ko/docs/Web/CSS/position 참고 -->
+  <!-- https://developer.mozilla.org/ko/docs/Web/CSS/Containing_Block 참고 -->
+  <style>
+    .container {
+      position: relative;
+      top: 100px;
+      left: 100px;
+      background-color: beige;
+    }
 
-        .box2 {
-            background-color: palevioletred;
-            position: sticky;
-            /* Containing_Block 참고!!!!! */
-            /* sticky: 흐름에 따라 배치하며 기존에는 position을 유지하다가 스크롤링되면 보여지지 않는 시점에 주어진 속성값으로 위치가 고정된다. */
-            /* 🎈 속성(top, left..)값을 지정해주지 않으면 변화가 없다. */
-            /* 주어진 속성값 위치에 유지하고 있기 때문에 다른 요소들도 위치를 유지한다. */
-            
-            top: 0px;
-            left: 0px;
-        }
+    .box {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      background-color: cadetblue;
+    }
 
-        .box3 {
-            background-color: slateblue;
-            position: fixed;
-            /* fixed: 부모와 상관없이 뷰포트 안에서 포지션이 일어나기 때문에 뷰포트 기준으로 주어진 속성값으로 위치가 고정된다. (스크롤링 했을때도) */
-            /* 🎈 상대적으로 뷰포트에서 position이 결정된다. */
+    .box2 {
+      background-color: palevioletred;
+      position: sticky;
+      /* Containing_Block 참고!!!!! */
+      /* sticky: 흐름에 따라 배치하며 기존에는 position을 유지하다가 스크롤링되면 보여지지 않는 시점에 주어진 속성값으로 위치가 고정된다. */
+      /* 🎈 속성(top, left..)값을 지정해주지 않으면 변화가 없다. */
+      /* 주어진 속성값 위치에 유지하고 있기 때문에 다른 요소들도 위치를 유지한다. */
 
-            top: 20px;
-            left: 20px;
-        }
-    </style>
+      top: 0px;
+      left: 0px;
+    }
+
+    .box3 {
+      background-color: slateblue;
+      position: fixed;
+      /* fixed: 부모와 상관없이 뷰포트 안에서 포지션이 일어나기 때문에 뷰포트 기준으로 주어진 속성값으로 위치가 고정된다. (스크롤링 했을때도) */
+      /* 🎈 상대적으로 뷰포트에서 position이 결정된다. */
+
+      top: 20px;
+      left: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="box box1"></div>
-        <div class="box box2"></div>
-        <div class="box box3"></div>
-        <div class="box box4"></div>
-        <div class="box box5"></div>
-        <div class="box box6"></div>
-        <div class="box box7"></div>
-        <div class="box box8"></div>
-        <div class="box box9"></div>
-        <div class="box box10"></div>
-    </div>
+  <div class="container">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <div class="box box5"></div>
+    <div class="box box6"></div>
+    <div class="box box7"></div>
+    <div class="box box8"></div>
+    <div class="box box9"></div>
+    <div class="box box10"></div>
+  </div>
 </body>
+
 </html>
