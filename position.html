@@ -1,77 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/position 참고 -->
-    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/Containing_Block 참고 -->
-    <style>
-        .outer {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-            background-color: yellow;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- https://developer.mozilla.org/ko/docs/Web/CSS/position 참고 -->
+  <!-- https://developer.mozilla.org/ko/docs/Web/CSS/Containing_Block 참고 -->
+  <style>
+    .outer {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+      background-color: yellow;
+    }
 
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: grey;
-            
-            position: relative; 
-            /* .box .inner1 부분 position과 관련 */
-        }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: grey;
 
-        .inner {
-            width: 100%;
-            height: 50%;
-        }
+      position: relative;
+      /* .box .inner1 부분 position과 관련 */
+    }
 
-        .inner1 {
-            background-color: cyan;
-        }
+    .inner {
+      width: 100%;
+      height: 50%;
+    }
 
-        .inner2 {
-            background-color: magenta;
-        }
+    .inner1 {
+      background-color: cyan;
+    }
 
-        .box1 .inner1 {
-            position: relative;
-            /* relative: 흐름에 따라 배치하며 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용한다. */
-            /* 원래 있던 공간은 유지하면서 상대적으로 명시한 속성값 만큼 옮겨가는 것. */
+    .inner2 {
+      background-color: magenta;
+    }
 
-            /* position: static;  */
-            /* static(기본값): 흐름에 따라 배치하며 top, right, bottom, left, z-index 속성에 영향을 주지 않는다. */
+    .box1 .inner1 {
+      position: relative;
+      /* relative: 흐름에 따라 배치하며 자신을 기준으로 top, right, bottom, left의 값에 따라 오프셋을 적용한다. */
+      /* 원래 있던 공간은 유지하면서 상대적으로 명시한 속성값 만큼 옮겨가는 것. */
 
-            top: 30px;
-            left: 100px;
-        }
+      /* position: static;  */
+      /* static(기본값): 흐름에 따라 배치하며 top, right, bottom, left, z-index 속성에 영향을 주지 않는다. */
 
-        .box2 .inner1 {
-            position: absolute;
-            /* absolute: 흐름을 제거하고 페이지 레이아웃에 공간도 배정하지 않는다. 최종 위치는 속성값에 따른다. */
-            /* 근접한 부모 중에 기본값이 static이 아닌 부모의 기준에서 움직인다. */
-            /* 현재 부모는 body로 box 안에서 position을 옮겨가고 싶으면 box position을 relative로 변경해주면 된다. */
+      top: 30px;
+      left: 100px;
+    }
 
-            top: 30px;
-            left: 100px;
-        }
-    </style>
+    .box2 .inner1 {
+      position: absolute;
+      /* absolute: 흐름을 제거하고 페이지 레이아웃에 공간도 배정하지 않는다. 최종 위치는 속성값에 따른다. */
+      /* 근접한 부모 중에 기본값이 static이 아닌 부모의 기준에서 움직인다. */
+      /* 현재 부모는 body로 box 안에서 position을 옮겨가고 싶으면 box position을 relative로 변경해주면 된다. */
+
+      top: 30px;
+      left: 100px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="outer">
-        <div class="box box1">
-            <div class="inner inner1">inner1</div>
-            <div class="inner inner2">inner2</div>
-        </div>
+  <div class="outer">
+    <div class="box box1">
+      <div class="inner inner1">inner1</div>
+      <div class="inner inner2">inner2</div>
     </div>
-    <div class="outer">
-        <div class="box box2">
-            <div class="inner inner1">inner1</div>
-            <div class="inner inner2">inner2</div>
-        </div>
+  </div>
+  <div class="outer">
+    <div class="box box2">
+      <div class="inner inner1">inner1</div>
+      <div class="inner inner2">inner2</div>
     </div>
+  </div>
 </body>
+
 </html>
