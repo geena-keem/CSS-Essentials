@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing 참고 -->
-    <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        }
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- https://developer.mozilla.org/ko/docs/Web/CSS/box-sizing 참고 -->
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
 
-        .inner {
-            width: 100%;
-            height: 100%;
-            background-color: blue;
-        }
+    .inner {
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+    }
 
-        .box2 {
-            padding: 20px;
-            box-sizing: content-box;
-            /* content-box(기본값): 높이와 너비가 컨텐츠 영역만 포함하고 안팎여백과 테두리는 포함되지 않는다. */
-            /* 즉, 컨텐츠만 지정하는 것. (padding과 border 값을 주어도 컨텐츠 사이즈는 변경되지 않는다.) */
+    .box2 {
+      padding: 20px;
+      box-sizing: content-box;
+      /* content-box(기본값): 높이와 너비가 컨텐츠 영역만 포함하고 안팎여백과 테두리는 포함되지 않는다. */
+      /* 즉, 컨텐츠만 지정하는 것. (padding과 border 값을 주어도 컨텐츠 사이즈는 변경되지 않는다.) */
 
-            border: 10px solid black;
-        }
+      border: 10px solid black;
+    }
 
-        .box3 {
-            padding: 20px;
-            box-sizing: border-box;
-            /* border-box: 높이와 너비가 안쪽 여백과 테두리는 포함하고 바깥 여백은 포함하지 않는다. */
-            /* 즉, 패딩과 보더를 합해서 포함하는 것. (padding과 border를 넣은 만큼 컨텐츠 영역이 작아진다.) */
-            /* padding을 넣는다는 것은 box안에 여백을 만드는 것이기 때문에 대부분은 border-box를 사용한다. */
+    .box3 {
+      padding: 20px;
+      box-sizing: border-box;
+      /* border-box: 높이와 너비가 안쪽 여백과 테두리는 포함하고 바깥 여백은 포함하지 않는다. */
+      /* 즉, 패딩과 보더를 합해서 포함하는 것. (padding과 border를 넣은 만큼 컨텐츠 영역이 작아진다.) */
+      /* padding을 넣는다는 것은 box안에 여백을 만드는 것이기 때문에 대부분은 border-box를 사용한다. */
 
-            border: 10px solid black;
-        }
-    </style>
+      border: 10px solid black;
+    }
+  </style>
 </head>
+
 <body>
-    <h3>Box without padding!</h3>
-    <div class="box box1">
-        <div class="inner"></div>
-    </div>
+  <h3>Box without padding!</h3>
+  <div class="box box1">
+    <div class="inner"></div>
+  </div>
 
-    <h3>Box with padding!</h3>
-    <div class="box box2">
-        <div class="inner"></div>
-    </div>
+  <h3>Box with padding!</h3>
+  <div class="box box2">
+    <div class="inner"></div>
+  </div>
 
-    <h3>Box with padding, border-box!</h3>
-    <div class="box box3">
-        <div class="inner"></div>
-    </div>
+  <h3>Box with padding, border-box!</h3>
+  <div class="box box3">
+    <div class="inner"></div>
+  </div>
 </body>
+
 </html>
